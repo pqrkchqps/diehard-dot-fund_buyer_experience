@@ -43,6 +43,32 @@ module Plugins
           t.string  :plan
           t.string  :payment_method, default: :chargify, null: false
         end
+
+        plugin.use_test_route :setup_group_on_free_plan do
+          group = Group.new(name: 'Ghostbusters',
+          is_visible_to_public: true)
+          GroupService.create(group: group, actor: patrick)
+          membership = Membership.find_by(user: patrick, group: group)
+          group.add_member! jennifer
+          sign_in patrick
+          redirect_to group_url(group)
+        end
+
+        plugin.use_test_route :setup_group_on_paid_plan  do
+          GroupService.create(group: test_group, actor: patrick)
+          subscription = test_group.subscription
+          subscription.update_attribute :kind, 'paid'
+          sign_in patrick
+          redirect_to group_url(test_group)
+        end
+
+        plugin.use_test_route :setup_group_and_select_plan do
+          test_group.experiences['bx_choose_plan'] = true
+          test_group.save
+          GroupService.create(group: test_group, actor: patrick)
+          sign_in patrick
+          redirect_to group_url(test_group)
+        end
       end
 
     end
