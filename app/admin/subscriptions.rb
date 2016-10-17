@@ -22,7 +22,9 @@ ActiveAdmin.register Subscription do
       row :trial_ended_at
       row :activated_at
       row :chargify_subscription_id do |subscription|
-        chargify_subscription_link(subscription)
+        if subscription.chargify_subscription_id
+          link_to subscription.chargify_subscription_id, "http://#{ENV['CHARGIFY_APP_NAME']}.chargify.com/subscriptions/#{subscription.chargify_subscription_id}", target: '_blank'
+        end
       end
       row :plan
       row :payment_method
