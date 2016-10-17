@@ -17,7 +17,7 @@ module Plugins
         plugin.use_class_directory 'app/helpers'
         plugin.use_class_directory 'app/services'
 
-        plugin.use_route :post, 'groups/:id/use_gift_subscription', 'api/groups#use_gift_subscription'
+        plugin.use_route :post, 'groups/:id/use_gift_subscription', 'groups#use_gift_subscription'
         plugin.extend_class API::GroupsController do
           def use_gift_subscription
             if SubscriptionService.available?

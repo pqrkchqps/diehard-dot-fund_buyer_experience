@@ -10,7 +10,7 @@ class SubscriptionService
     @subscription = group.subscription || group.build_subscription if group.is_parent?
   end
 
-  def initial_subscription!(choose_bx_plan: true)
+  def initial_subscription!
     @subscription.group.experiences['bx_choose_plan'] = [true, false].sample if ENV['LOOMIO_AB_TEST']
     @subscription.group.save
     start_gift! unless @subscription.group.experiences['bx_choose_plan']
