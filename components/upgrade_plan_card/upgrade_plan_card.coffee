@@ -8,7 +8,7 @@ angular.module('loomioApp').directive 'upgradePlanCard', ->
     $scope.show = ->
       Session.user().isMemberOf($scope.group) and
       $scope.group.subscriptionKind == 'gift' and
-      ChargifyService.chargify() and
+      ChargifyService.chargify().appName and
       !Session.subscriptionSuccess
 
     $scope.showOriginal = parseInt((Math.random()*10))%2 == 0

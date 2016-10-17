@@ -17,4 +17,4 @@ angular.module('loomioApp').factory 'ChargifyService', (AppConfig, Session) ->
       ).join('&')
 
     chargify: ->
-      AppConfig.pluginConfig('loomio_buyer_experience').config.chargify.appName
+      AppConfig.pluginConfig('loomio_buyer_experience').config.chargify
