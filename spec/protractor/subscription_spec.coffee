@@ -19,3 +19,8 @@ describe 'Subscription flow', ->
       page.expectNoElement('.trial-card')
       page.click('.group-page-actions__button')
       page.expectElement('.group-page-actions__manage-subscription-link')
+
+  describe 'group after subscription success', ->
+    it 'shows the subscription success modal', ->
+      page.loadPath('setup_group_after_chargify_success')
+      page.expectElement '.subscription-success-modal', 'You\'re all set!'

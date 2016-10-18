@@ -70,6 +70,12 @@ module Plugins
           sign_in patrick
           redirect_to group_url(test_group)
         end
+
+        plugin.use_test_route :setup_group_after_chargify_success do
+          test_group.save
+          sign_in patrick
+          redirect_to group_url test_group, chargify_success: true
+        end
       end
 
     end
