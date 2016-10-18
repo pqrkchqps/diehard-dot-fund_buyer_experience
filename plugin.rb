@@ -6,6 +6,7 @@ module Plugins
         plugin.enabled = true
 
         plugin.use_asset 'components/services/chargify_service.coffee'
+        plugin.use_asset 'components/decorators/group_page_controller_decorator.coffee'
         plugin.use_component :choose_plan_modal
         plugin.use_component :confirm_gift_plan_modal
         plugin.use_component :subscription_success_modal
