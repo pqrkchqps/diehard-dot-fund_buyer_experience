@@ -21,9 +21,8 @@
             %i.fa.fa-money>
             .support-loomio-modal__no-more-modals
               %h3.lmo-bold{translate: "loomio_buyer_experience.support_loomio_modal.no_more_modals"}
-        .support-loomio-model__find-out-more
-          %a{ng-click: "upgrade()", target: "_blank", title: "{{ 'loomio_buyer_experience.support_loomio_modal.upgrade_button_title' | translate }}"}
-            %span{translate: "loomio_buyer_experience.support_loomio_modal.find_out_more"}
+        %a.support-loomio-model__find-out-more{ng-click: "upgrade()", target: "_blank", title: "{{ 'loomio_buyer_experience.support_loomio_modal.upgrade_button_title' | translate }}"}
+          %span{translate: "loomio_buyer_experience.support_loomio_modal.find_out_more"}
       %a.support-loomio-modal__upgrade-button{ng-click: "upgrade()", type: "button", title: "{{ 'loomio_buyer_experience.support_loomio_modal.upgrade_button_title' | translate }}"}
         %span{translate: "loomio_buyer_experience.support_loomio_modal.upgrade"}
     .support-loomio-modal__donate.support-loomio-modal--container
@@ -42,7 +41,6 @@
         %span{translate: "loomio_buyer_experience.support_loomio_modal.questions"}>
         %a{ng-click: "openIntercom()", target: "_blank"}>
           %span{translate: "loomio_buyer_experience.support_loomio_modal.lets_talk"}
-    .support-loomio-modal__no-thanks
-      %a{ng-click: "dismiss()", title: "{{ 'loomio_buyer_experience.support_loomio_modal.no_thanks' | translate }}"}
-        %span{translate: "loomio_buyer_experience.support_loomio_modal.no_thanks"}>
-        %i.fa.fa-times
+    %a.support-loomio-modal__no-thanks{ng-click: "dismiss()", title: "{{ 'loomio_buyer_experience.support_loomio_modal.no_thanks' | translate }}"}
+      %span{translate: "loomio_buyer_experience.support_loomio_modal.no_thanks"}>
+      %i.fa.fa-times

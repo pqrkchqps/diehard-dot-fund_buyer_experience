@@ -45,8 +45,9 @@
 }
 
 .support-loomio-model__find-out-more {
+  display: block;
   padding: 15px 0;
-  a { cursor: pointer; }
+  cursor: pointer;
 }
 
 .support-loomio-modal__donate-image {
@@ -78,11 +79,9 @@
 }
 
 .support-loomio-modal__no-thanks {
-  a {
-    cursor: pointer;
-    text-decoration: none;
-    color: $grey-on-white;
-  }
+  cursor: pointer;
+  text-decoration: none;
+  color: $grey-on-white;
   margin-left: auto;
   line-height: 48px;
   font-size: 12px;
