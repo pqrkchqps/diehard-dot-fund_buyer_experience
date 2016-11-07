@@ -19,4 +19,14 @@ describe 'GroupService' do
       expect(group.reload.subscription).to be nil
     end
   end
+
+  describe 'archive!' do
+    it 'cancels the subscription' do
+      group.add_admin! user
+      instance = OpenStruct.new
+      allow(SubscriptionService).to receive(:new).and_return(instance)
+      expect(instance).to receive :end_subscription!
+      GroupService.archive(group: group, actor: user)
+    end
+  end
 end

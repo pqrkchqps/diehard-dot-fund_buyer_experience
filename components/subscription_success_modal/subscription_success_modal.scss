@@ -1,12 +1,15 @@
-.subscription-success-modal__mascot {
-  float: left;
-  height: 150px;
-  padding: 0 25px 25px 0;
-  @media (max-width: 450px) { display: none; }
+.subscription-success-modal {
+  max-width: 500px;
 }
 
-.subscription-success-modal__message {
-  margin-top: 20px;
+.subscription-success-modal .modal-body {
+  @include displayFlex;
+}
+
+.subscription-success-modal__mascot {
+  height: 150px;
+  padding: 0 25px 0 0;
+  @media (max-width: 450px) { display: none; }
 }
 
 .subscription-success-modal__contact-link {

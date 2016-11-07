@@ -7,9 +7,20 @@ describe 'Subscription flow', ->
       page.expectElement('.upgrade-plan-card')
 
   describe 'setup group and select plan', ->
-    it 'displays the choose plan modal', ->
+    it 'shows the choose plan modal and the support loomio modal', ->
       page.loadPath('setup_group_and_select_plan')
       page.expectElement('.choose-plan-modal')
+      page.click('.choose-plan-modal__table .choose-plan-modal__select-button--gift')
+      page.expectElement('.support-loomio-modal')
+      page.expectElement('.support-loomio-modal__upgrade-button')
+      page.expectElement('.support-loomio-modal__donate-button')
+      page.click('.support-loomio-modal__no-thanks')
+      page.expectElement('.upgrade-plan-card__confirm-button')
+
+  describe 'showing the support loomio modal to group creators', ->
+    it 'shows the support loomio modal to group creators after some time', ->
+      page.loadPath('setup_old_group_on_free_plan')
+      page.expectElement('.support-loomio-modal')
 
   describe 'group on paid plan', ->
 

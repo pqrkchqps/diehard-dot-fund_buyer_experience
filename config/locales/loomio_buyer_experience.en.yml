@@ -1,0 +1,26 @@
+en:
+  support_loomio_modal:
+    aria_label: Support Loomio
+  loomio_buyer_experience:
+    support_loomio_modal:
+      heading: "{{group}} is a free Loomio group"
+      upgrade_title: Get great Loomio features
+      custom_domain: Custom Domain
+      custom_domain_description: Make your group easy to find with yourname.loomio.org
+      slack_integration: Slack Integration
+      slack_integration_description: Loomio and Slack work great together! Link them up.
+      no_more_modals: Your group members will no longer be asked to donate
+      find_out_more: Find out more
+      upgrade: Upgrade
+      upgrade_button_title: Upgrade to a premium plan
+      donate_title: Support free Loomio access
+      donate_caption: "Loomio group: UN Youth Council in Nairobi, Kenya"
+      donate_image_alt: "Loomio group: UN Youth Council in Nairobi, Kenya"
+      donate_button_title: Make a donation
+      donate_text: |
+        As a mission-driven social enterprise, we never want cost to be a barrier to collaboration.
+        <strong>You can be part of <a href="{{link}}" target="_blank">amazing stories</a> by helping us provide Loomio free to groups who need it.
+      donate: Donate
+      no_thanks: No thanks, I want to keep using Loomio for free
+      questions: Questions?
+      lets_talk: Let's talk!

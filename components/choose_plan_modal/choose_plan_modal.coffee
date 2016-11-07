@@ -1,11 +1,12 @@
 angular.module('loomioApp').factory 'ChoosePlanModal', ->
   templateUrl: 'generated/components/choose_plan_modal/choose_plan_modal.html'
   size: 'choose-plan-modal'
-  controller: ($scope, group, ModalService, ConfirmGiftPlanModal, ChargifyService, $window, IntercomService) ->
+  controller: ($scope, $window, group, Records, Session, ModalService, SupportLoomioModal, ChargifyService, IntercomService) ->
     $scope.group = group
 
     $scope.chooseGiftPlan = ->
-      ModalService.open ConfirmGiftPlanModal, group: -> $scope.group
+      Records.memberships.saveExperience('chosen_gift_plan', $scope.group.membershipFor(Session.user()))
+      ModalService.open SupportLoomioModal, group: (-> $scope.group), preventClose: (-> true)
 
     $scope.choosePaidPlan = (kind) ->
       $window.open ChargifyService.chargifyUrlFor($scope.group, kind)
