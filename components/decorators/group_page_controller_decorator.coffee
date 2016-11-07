@@ -26,8 +26,6 @@ angular.module('loomioApp').config ($provide) ->
         ctrl.handleSupportLoomioModal = ->
           membership = @group.membershipFor(Session.user()) or { experiences: {} }
           return unless AppConfig.pluginConfig('loomio_buyer_experience').config.chargify.appName? and
-            # member is coordinator
-            membership.admin and
             # AND hasn't seen the modal before
             !membership.experiences.seen_support_modal and
             # AND membership is 5 days old and group is on gift
