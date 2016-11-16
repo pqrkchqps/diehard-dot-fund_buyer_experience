@@ -1,7 +1,7 @@
 ActiveAdmin.register Subscription do
   actions :new, :create, :index, :show, :edit, :update, :destroy
-  filter :amount
-  filter :created_at
+
+  filter :group_name, :as => :string
 
   index do
     column :group
