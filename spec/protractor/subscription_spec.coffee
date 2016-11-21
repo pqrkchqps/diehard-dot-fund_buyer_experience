@@ -6,6 +6,12 @@ describe 'Subscription flow', ->
       page.loadPath('setup_group_on_free_plan')
       page.expectElement('.upgrade-plan-card')
 
+    it 'allows members to modify their plan', ->
+      page.loadPath('setup_group_on_free_plan')
+      page.click '.group-page-actions__button'
+      page.click '.group-page-actions__manage-subscription-link'
+      page.expectText '.modal-title', 'Please choose a plan for your group'
+
   describe 'setup group and select plan', ->
     it 'shows the choose plan modal and the support loomio modal', ->
       page.loadPath('setup_group_and_select_plan')

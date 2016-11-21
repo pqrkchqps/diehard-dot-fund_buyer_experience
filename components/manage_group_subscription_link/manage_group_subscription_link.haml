@@ -1,0 +1,7 @@
+%li.lmo-dropdown-menu-item{ng-if: "canManageGroupSubscription()"}
+  %a.group-page-actions__manage-subscription-link{ng-if: "group.subscriptionKind == 'paid'", ng-click: "manageSubscriptions()"}
+    %i.fa.fa-lg.fa-calendar-check-o>
+    %span{translate: "group_page.options.manage_subscription"}
+  %a.group-page-actions__manage-subscription-link{ng-if: "group.subscriptionKind == 'gift'", ng-click: "choosePlan()"}
+    %i.fa.fa-lg.fa-gift>
+    %span{translate: "group_page.options.manage_subscription"}
