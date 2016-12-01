@@ -4,42 +4,47 @@ angular.module('loomioApp').config ($provide) ->
       ctrl = $delegate arguments...
       if _.get(arguments, '[1].$router.name') == 'groupPage'
 
-        ctrl.handleSubscriptionSuccess = ->
-          return unless $location.search().chargify_success?
-          Session.subscriptionSuccess = true
-          @group.subscriptionKind = 'paid' # incase the webhook is slow
+        ctrl.addLauncher(=>
+          ctrl.group.subscriptionKind = 'paid'
           $location.search 'chargify_success', null
-          @openModal SubscriptionSuccessModal
+          ctrl.openModal SubscriptionSuccessModal
           true
+        , ->
+          AbilityService.isLoggedIn() and
+          $location.search().chargify_success?
+        , priority: 1)
 
-        ctrl.handleChoosePlanModal = ->
-          membership = @group.membershipFor(Session.user()) or { experiences: {} }
-          return unless AppConfig.pluginConfig('loomio_buyer_experience').config.chargify.appName? and
-            !@group.hasSubscription() and
-            @group.experiences.bx_choose_plan and
-            (membership and !membership.experiences.chosen_gift_plan) and
-            @group.isParent() and
-            Session.user().isAdminOf(@group)
-          @openModal ChoosePlanModal, group: (=> @group), preventClose: (-> true)
+        ctrl.addLauncher(=>
+          ctrl.openModal ChoosePlanModal, group: (=> ctrl.group), preventClose: (-> true)
           true
+        , =>
+          membership = ctrl.group.membershipFor(Session.user()) or { experiences: {} }
+          AbilityService.isLoggedIn() and
+          AppConfig.pluginConfig('loomio_buyer_experience').config.chargify.appName? and
+          !ctrl.group.hasSubscription() and
+          ctrl.group.experiences.bx_choose_plan and
+          (membership and !membership.experiences.chosen_gift_plan) and
+          ctrl.group.isParent() and
+          Session.user().isAdminOf(ctrl.group)
+        , priority: 5)
 
-        ctrl.handleSupportLoomioModal = ->
-          membership = @group.membershipFor(Session.user()) or { experiences: {} }
-          return unless AppConfig.pluginConfig('loomio_buyer_experience').config.chargify.appName? and
-            # AND hasn't seen the modal before
-            !membership.experiences.seen_support_modal and
-            # AND membership is 5 days old and group is on gift
-            (@group.subscriptionKind == 'gift' and membership.createdAt < moment().add(-5, 'day')) or
-            # OR membership has already selected 'gift' in the choose plan modal
-            (@group.subscriptionKind == null and membership.experiences.chosen_gift_plan)
-          @openModal SupportLoomioModal, group: (=> @group), preventClose: (-> true)
+        ctrl.addLauncher(=>
+          ctrl.openModal SupportLoomioModal, group: (=> ctrl.group), preventClose: (-> true)
           true
-
-        oldHandleWelcomeModal = ctrl.handleWelcomeModal
-        ctrl.handleWelcomeModal = (group) ->
-          ctrl.handleSubscriptionSuccess() or
-          ctrl.handleChoosePlanModal() or
-          ctrl.handleSupportLoomioModal() or
-          oldHandleWelcomeModal()
+        , =>
+          membership = ctrl.group.membershipFor(Session.user()) or { experiences: {} }
+          # user is logged in
+          AbilityService.isLoggedIn() and
+          # chargify is present
+          AppConfig.pluginConfig('loomio_buyer_experience').config.chargify.appName? and
+          # member is coordinator
+          membership.admin and
+          # AND hasn't seen the modal before
+          !membership.experiences.seen_support_modal and
+          # AND membership is 5 days old and group is on gift
+          (ctrl.group.subscriptionKind == 'gift' and membership.createdAt < moment().add(-5, 'day')) or
+          # OR membership has already selected 'gift' in the choose plan modal
+          (ctrl.group.subscriptionKind == null and membership.experiences.chosen_gift_plan)
+        , priority: 10)
 
       ctrl
