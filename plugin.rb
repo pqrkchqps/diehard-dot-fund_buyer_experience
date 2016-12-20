@@ -76,7 +76,7 @@ module Plugins
         end
 
         plugin.use_events do |event_bus|
-          event_bus.listen('group_create')  { |group| SubscriptionService.new(group).initial_subscription! if group.is_parent? }
+          event_bus.listen('group_create')  { |group| SubscriptionService.new(group).start_gift! if group.is_parent? }
           event_bus.listen('group_archive') { |group| SubscriptionService.new(group).end_subscription! if group.is_parent? }
         end
 

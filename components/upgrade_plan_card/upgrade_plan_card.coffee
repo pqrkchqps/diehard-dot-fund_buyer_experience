@@ -15,3 +15,7 @@ angular.module('loomioApp').directive 'upgradePlanCard', ->
 
     $scope.openUpgradeModal = ->
       ModalService.open ChoosePlanModal, group: -> $scope.group
+
+    $scope.donate = ->
+      $window.open '/donate'
+      true

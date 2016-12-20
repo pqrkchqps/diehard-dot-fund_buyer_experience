@@ -1,10 +1,54 @@
 .upgrade-plan-card {
   @include card;
-  p { color: $grey-on-white; }
+  @include displayFlex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  color: $grey-on-white;
 }
 
-.upgrade-plan-card__confirm-button {
+.upgrade-plan-card__upgrade-items {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: $grey-on-grey;
+  i {
+    @include displayFlex;
+    margin: 2px 8px 0 0;
+    color: #bbb;
+    font-size: 36px;
+    &.fa-money { font-size: 30px; }
+    &.fa-line-chart { font-size: 28px; }
+    &.fa-stethoscope { font-size: 41px; }
+  }
+
+  li {
+    @include displayFlex;
+    margin-bottom: 8px;
+  }
+}
+
+.upgrade-plan-card__more {
+  cursor: pointer;
+}
+
+.upgrade-plan-card__buttons {
+  @include displayFlex;
+  justify-content: space-between;
+  button {
+    width: 48.5%;
+  }
+}
+
+.upgrade-plan-card__upgrade {
   @include lmoBtnOffer;
+  @include lmoBtnIcon;
+  @include lmoBtnBlock;
+}
+
+.upgrade-plan-card__donate {
+  @include lmoBtnFeatured;
   @include lmoBtnIcon;
   @include lmoBtnBlock;
 }
