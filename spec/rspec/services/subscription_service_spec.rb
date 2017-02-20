@@ -8,7 +8,7 @@ describe SubscriptionService do
     canceled_at: 1.day.ago.to_date
   }.with_indifferent_access }
   let(:user) { create(:user) }
-  let(:group) { create(:group) }
+  let(:group) { create(:group, subscription: build(:subscription)) }
   let(:subscription) { group.subscription }
   let(:service) { SubscriptionService.new(group, user) }
   let(:chargify_service) { ChargifyService.new(1234) }

@@ -80,6 +80,11 @@ module Plugins
           event_bus.listen('group_archive') { |group| SubscriptionService.new(group).end_subscription! if group.is_parent? }
         end
 
+        plugin.use_factory :subscription do
+          kind :trial
+          expires_at 1.month.from_now
+        end
+
         plugin.use_database_table :subscriptions do |t|
           t.string  :kind
           t.date    :expires_at

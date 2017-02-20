@@ -2,7 +2,7 @@ require 'rails_helper'
 describe API::GroupsController do
 
   let(:user) { create :user }
-  let(:group) { create :group }
+  let(:group) { create :group, subscription: build(:subscription) }
 
   before do
     group.admins << user
@@ -20,7 +20,7 @@ describe API::GroupsController do
       SubscriptionService.stub(:available?).and_return(false)
       post :use_gift_subscription, id: group.key
       expect(response.status).to eq 400
-      expect(group.subscription.reload.kind).to_not eq 'gift'
+      expect(group.reload.subscription.kind).to_not eq 'gift'
     end
   end
 end
