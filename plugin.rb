@@ -104,34 +104,34 @@ module Plugins
         end
 
         plugin.use_test_route :setup_old_group_on_free_plan do
-          test_group.experiences['bx_choose_plan'] = false
-          test_group.save
-          GroupService.create(group: test_group, actor: patrick)
+          create_group.experiences['bx_choose_plan'] = false
+          create_group.save
+          GroupService.create(group: create_group, actor: patrick)
           sign_in patrick
-          Membership.find_by(user: patrick, group: test_group).update(created_at: 1.week.ago)
-          redirect_to group_url(test_group)
+          Membership.find_by(user: patrick, group: create_group).update(created_at: 1.week.ago)
+          redirect_to group_url(create_group)
         end
 
         plugin.use_test_route :setup_group_on_paid_plan  do
-          GroupService.create(group: test_group, actor: patrick)
-          subscription = test_group.subscription
+          GroupService.create(group: create_group, actor: patrick)
+          subscription = create_group.subscription
           subscription.update_attribute :kind, 'paid'
           sign_in patrick
-          redirect_to group_url(test_group)
+          redirect_to group_url(create_group)
         end
 
         plugin.use_test_route :setup_group_and_select_plan do
-          test_group.experiences['bx_choose_plan'] = true
-          test_group.save
-          GroupService.create(group: test_group, actor: patrick)
+          create_group.experiences['bx_choose_plan'] = true
+          create_group.save
+          GroupService.create(group: create_group, actor: patrick)
           sign_in patrick
-          redirect_to group_url(test_group)
+          redirect_to group_url(create_group)
         end
 
         plugin.use_test_route :setup_group_after_chargify_success do
-          test_group.save
+          create_group.save
           sign_in patrick
-          redirect_to group_url test_group, chargify_success: true
+          redirect_to group_url create_group, chargify_success: true
         end
       end
 
