@@ -12,16 +12,16 @@ describe 'Subscription flow', ->
       page.click '.group-page-actions__manage-subscription-link'
       page.expectText '.modal-title', 'Please choose a plan for your group'
 
-  describe 'setup group and select plan', ->
-    it 'shows the choose plan modal and the support loomio modal', ->
-      page.loadPath('setup_group_and_select_plan')
-      page.expectElement('.choose-plan-modal')
-      page.click('.choose-plan-modal__table .choose-plan-modal__select-button--gift')
-      page.expectElement('.support-loomio-modal')
-      page.expectElement('.support-loomio-modal__upgrade-button')
-      page.expectElement('.support-loomio-modal__donate-button')
-      page.click('.support-loomio-modal__no-thanks')
-      page.expectElement('.upgrade-plan-card__confirm-button')
+  # describe 'setup group and select plan', ->
+  #   it 'shows the choose plan modal and the support loomio modal', ->
+  #     page.loadPath('setup_group_and_select_plan')
+  #     page.expectElement('.choose-plan-modal')
+  #     page.click('.choose-plan-modal__table .choose-plan-modal__select-button--gift')
+  #     page.expectElement('.support-loomio-modal')
+  #     page.expectElement('.support-loomio-modal__upgrade-button')
+  #     page.expectElement('.support-loomio-modal__donate-button')
+  #     page.click('.support-loomio-modal__no-thanks')
+  #     page.expectElement('.upgrade-plan-card__confirm-button')
 
   describe 'showing the support loomio modal to group creators', ->
     it 'shows the support loomio modal to group creators after some time', ->

@@ -120,14 +120,6 @@ module Plugins
           redirect_to group_url(create_group)
         end
 
-        plugin.use_test_route :setup_group_and_select_plan do
-          create_group.experiences['bx_choose_plan'] = true
-          create_group.save
-          GroupService.create(group: create_group, actor: patrick)
-          sign_in patrick
-          redirect_to group_url(create_group)
-        end
-
         plugin.use_test_route :setup_group_after_chargify_success do
           create_group.save
           sign_in patrick
