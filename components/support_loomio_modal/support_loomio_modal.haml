@@ -1,8 +1,9 @@
-.support-loomio-modal
-  .modal-header
-    %h1.lmo-h1.modal-title{translate: "loomio_buyer_experience.support_loomio_modal.heading", translate-value-group: "{{group.name}}"}
-
-  .modal-body.support-loomio-modal__body
+%md-dialog.support-loomio-modal
+  %md-toolbar
+    .md-toolbar-tools.lmo-flex__space-between
+      %h1.lmo-h1{translate: "loomio_buyer_experience.support_loomio_modal.heading", translate-value-group: "{{group.name}}"}
+      %material_modal_header_cancel_button
+  .md-dialog-content.md-body-1.support-loomio-modal__body
     .support-loomio-modal__upgrade.support-loomio-modal--container
       .support-loomio-modal__upgrade-content
         %h2.lmo-h2{translate: "loomio_buyer_experience.support_loomio_modal.upgrade_title"}
@@ -34,13 +35,13 @@
       %a.support-loomio-modal__donate-button{ng-click: "donate()", type: "button", title: "{{ 'loomio_buyer_experience.support_loomio_modal.donate_button_title' | translate }}"}
         %span{translate: "loomio_buyer_experience.support_loomio_modal.donate"}
 
-  .modal-footer.lmo-clearfix.support-loomio-modal__footer
-    .support-loomio-modal__lets-talk
-      %img.choose_plan_modal__mhjbs-head{src: "/img/mhjb.png"}>
-      %span
-        %span{translate: "loomio_buyer_experience.support_loomio_modal.questions"}>
-        %a{ng-click: "openIntercom()", target: "_blank"}>
-          %span{translate: "loomio_buyer_experience.support_loomio_modal.lets_talk"}
-    %a.support-loomio-modal__no-thanks{ng-click: "dismiss()", title: "{{ 'loomio_buyer_experience.support_loomio_modal.no_thanks' | translate }}"}
-      %span{translate: "loomio_buyer_experience.support_loomio_modal.no_thanks"}>
-      %i.fa.fa-times
+    .modal-footer.lmo-clearfix.support-loomio-modal__footer
+      .support-loomio-modal__lets-talk
+        %img.choose_plan_modal__mhjbs-head{src: "/img/mhjb.png"}>
+        %span
+          %span{translate: "loomio_buyer_experience.support_loomio_modal.questions"}>
+          %a{ng-click: "openIntercom()", target: "_blank"}>
+            %span{translate: "loomio_buyer_experience.support_loomio_modal.lets_talk"}
+      %a.support-loomio-modal__no-thanks{ng-click: "dismiss()", title: "{{ 'loomio_buyer_experience.support_loomio_modal.no_thanks' | translate }}"}
+        %span{translate: "loomio_buyer_experience.support_loomio_modal.no_thanks"}>
+        %i.fa.fa-times

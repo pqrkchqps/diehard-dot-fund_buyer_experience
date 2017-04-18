@@ -1,9 +1,9 @@
-.subscription-success-modal
-  .modal-header
-    %modal_header_cancel_button
-    %h1.lmo-h1.modal-title{translate: "subscription_success_modal.heading"}
-
-  .modal-body
+%md-dialog.subscription-success-modal
+  %md-toolbar
+    .md-toolbar-tools.lmo-flex__space-between
+      %h1.lmo-h1{translate: "subscription_success_modal.heading" }
+      %material_modal_header_cancel_button
+  .md-dialog-content.md-body-1
     %img.subscription-success-modal__mascot{src: "/img/mascot.png"}
     .subscription-success-modal__message
       %p{translate: "subscription_success_modal.receipt"}
@@ -13,5 +13,5 @@
           %button.subscription-success-modal__contact-link{translate: "subscription_success_modal.contact_link", ng-click: "openIntercom()"}
       %p{translate: "subscription_success_modal.sign_off"}
 
-  .modal-footer.lmo-clearfix
-    %button.lmo-btn--submit{type: "button", ng-click: "dismiss()", translate: "subscription_success_modal.ok_got_it"}
+    .lmo-md-action
+      %button.lmo-btn--submit{type: "button", ng-click: "dismiss()", translate: "subscription_success_modal.ok_got_it"}

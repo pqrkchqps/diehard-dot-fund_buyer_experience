@@ -106,22 +106,13 @@
 }
 
 .choose_plan_modal__footer {
-  display: table;
-  text-align: left;
-}
-
-.choose-plan-modal__footer--row {
-  display: table-row;
-}
-
-.choose_plan_modal__footer--left {
-  display: table-cell;
+  @include displayFlex;
+  align-items: center;
+  margin-top: 8px;
 }
 
 .choose_plan_modal__footer--right {
   padding-left: 10px;
-  display: table-cell;
-  vertical-align: bottom;
 }
 
 .choose-plan-modal__contact-link {

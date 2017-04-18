@@ -1,9 +1,9 @@
-.choose-plan-modal
-  .modal-header
-    %modal_header_cancel_button{ng-if: "group.hasSubscription()"}
-    %h1.lmo-h1.modal-title{translate: "choose_plan_modal.heading"}
-
-  .modal-body
+%md-dialog.choose-plan-modal
+  %md-toolbar
+    .md-toolbar-tools.lmo-flex__space-between
+      %h1.lmo-h1{translate: "choose_plan_modal.heading"}
+      %material_modal_header_cancel_button
+  .md-dialog-content.md-body-1
     .mobile-choose-plan-modal__flex
       .buh-flex-child
         .choose-plan-modal__plan.choose-plan-modal--featured
@@ -200,11 +200,9 @@
         .u-td.choose-plan-modal__gutter-cell
         .u-td.choose-plan-modal__cell.choose-plan-modal--boring
           %i.fa.fa-check
-  .modal-footer
-    .choose_plan_modal__footer
-      .choose-plan-modal__footer--row
-        .choose_plan_modal__footer--left
-          %img.choose_plan_modal__mhjbs-head{src: "/img/mhjb.png"}
+    .modal-footer
+      .choose_plan_modal__footer
+        %img.choose_plan_modal__mhjbs-head{src: "/img/mhjb.png"}
         .choose_plan_modal__footer--right
           %span{translate: "choose_plan_modal.prices_in_us_dollars"}
           %br
