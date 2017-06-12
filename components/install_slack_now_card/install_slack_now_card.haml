@@ -1,0 +1,9 @@
+.install-slack-card.lmo-card.lmo-relative
+  .lmo-disabled-form{ng-show: "isDisabled"}
+  %h2.lmo-card-heading{translate: "loomio_buyer_experience.install_slack_now_card.title"}
+  .lmo-flex
+    %img.install-slack-card__logo{src: "/img/slack-icon.svg"}
+    %p.install-slack-card__helptext.poll-common-helptext{translate: "loomio_buyer_experience.install_slack_now_card.helptext"}
+  .lmo-flex.lmo-flex__space-between
+    %div
+    %md-button.md-raised.md-primary{ng-click: "installSlack()", translate: "loomio_buyer_experience.install_slack_now_card.button"}

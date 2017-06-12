@@ -12,6 +12,7 @@ module Plugins
         plugin.use_component :subscription_success_modal
         plugin.use_component :upgrade_plan_card, outlet: :before_group_page_column_right
         plugin.use_component :manage_group_subscription_link, outlet: :after_group_actions_manage_memberships
+        plugin.use_component :install_slack_now_card, outlet: :after_slack_card
 
         plugin.use_translations 'config/locales', :loomio_buyer_experience
 

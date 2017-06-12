@@ -24,3 +24,7 @@ en:
       no_thanks: No thanks, I want to keep using Loomio for free
       questions: Questions?
       lets_talk: Let's talk!
+    install_slack_now_card:
+      title: Link your group with Slack
+      helptext: Thanks for paying for a group on Loomio! You can now select a Slack channel to sync with, which will allow your members to easily start, view, and vote on polls in this group.
+      button: Install Slack Now
