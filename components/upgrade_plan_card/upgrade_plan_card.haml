@@ -1,6 +1,6 @@
 .blank
   .lmo-blank{ng-if: "show()"}
-    %section.upgrade-plan-card{ng-if: "showOriginal"}
+    %section.upgrade-plan-card
       %h2.lmo-card-heading{translate: "upgrade_plan_card.heading"}
       %ul.upgrade-plan-card__upgrade-items
         %li
@@ -12,30 +12,10 @@
         %li
           %i.fa.fa-money
           %span{translate: "upgrade_plan_card.donations"}
-      %p
-        %a.upgrade-plan-card__more{ng-click: "openUpgradeModal()", translate: "upgrade_plan_card.more"}
-      %div.upgrade-plan-card__buttons
-        %button.upgrade-plan-card__upgrade.upgrade-plan-card__slack_domain_donations{ng-click: "openUpgradeModal()"}
-          %span{translate: "upgrade_plan_card.upgrade"}
-        %button.upgrade-plan-card__donate.upgrade-plan-card__slack_domain_donations{ng-click: "donate()"}
-          %span{translate: "upgrade_plan_card.donate"}
 
-    %section.upgrade-plan-card{ng-if: "!showOriginal"}
-      %h2.lmo-card-heading{translate: "upgrade_plan_card.heading"}
-      %ul.upgrade-plan-card__upgrade-items
-        %li
-          %i.fa.fa-stethoscope
-          %span{translate: "upgrade_plan_card.help_html"}
-        %li
-          %i.fa.fa-line-chart
-          %span{translate: "upgrade_plan_card.analytics_html"}
-        %li
-          %i.fa.fa-money
-          %span{translate: "upgrade_plan_card.donations"}
       %p
         %a.upgrade-plan-card__more{ng-click: "openUpgradeModal()", translate: "upgrade_plan_card.more"}
-      %div.upgrade-plan-card__buttons
-        %button.upgrade-plan-card__upgrade.upgrade-plan-card__help_analytics_donations{ng-click: "openUpgradeModal()"}
+
+      .lmo-flex
+        %md-button.md-primary.md-raised.upgrade-plan-card__upgrade{ng-click: "openUpgradeModal()"}
           %span{translate: "upgrade_plan_card.upgrade"}
-        %button.upgrade-plan-card__donate.upgrade-plan-card__help_analytics_donations{ng-click: "donate()"}
-          %span{translate: "upgrade_plan_card.donate"}

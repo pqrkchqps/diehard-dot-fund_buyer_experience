@@ -11,11 +11,5 @@ angular.module('loomioApp').directive 'upgradePlanCard', ->
       ChargifyService.chargify().appName and
       !Session.subscriptionSuccess
 
-    $scope.showOriginal = parseInt((Math.random()*10))%2 == 0
-
     $scope.openUpgradeModal = ->
       ModalService.open ChoosePlanModal, group: -> $scope.group
-
-    $scope.donate = ->
-      $window.open '/donate'
-      true

@@ -33,22 +33,6 @@
   cursor: pointer;
 }
 
-.upgrade-plan-card__buttons {
-  @include displayFlex;
-  justify-content: space-between;
-  button {
-    width: 48.5%;
-  }
-}
-
 .upgrade-plan-card__upgrade {
-  @include lmoBtnOffer;
-  @include lmoBtnIcon;
-  @include lmoBtnBlock;
-}
-
-.upgrade-plan-card__donate {
-  @include lmoBtnFeatured;
-  @include lmoBtnIcon;
-  @include lmoBtnBlock;
+  width: 100%;
 }
