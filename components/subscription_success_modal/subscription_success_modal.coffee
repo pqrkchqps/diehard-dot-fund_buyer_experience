@@ -7,5 +7,5 @@ angular.module('diehard_fundApp').factory 'SubscriptionSuccessModal', ->
       $scope.$close()
 
     $scope.dismiss = ->
-      $rootScope.$broadcast 'launchIntroCarousel' if Diehard_Fund.pluginConfig('diehard_fund_onboarding')
+      $rootScope.$broadcast 'launchIntroCarousel' if DiehardFund.pluginConfig('diehard_fund_onboarding')
       $scope.$close()

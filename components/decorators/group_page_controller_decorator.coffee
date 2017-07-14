@@ -1,5 +1,5 @@
 angular.module('diehard_fundApp').config ($provide) ->
-  $provide.decorator '$controller', ($delegate, $location, AppConfig, Session, AbilityService, ChoosePlanModal, SubscriptionSuccessModal, SupportDiehard_FundModal) ->
+  $provide.decorator '$controller', ($delegate, $location, AppConfig, Session, AbilityService, ChoosePlanModal, SubscriptionSuccessModal, SupportDiehardFundModal) ->
     ->
       ctrl = $delegate arguments...
       if _.get(arguments, '[1].$router.name') == 'groupPage'
@@ -29,7 +29,7 @@ angular.module('diehard_fundApp').config ($provide) ->
         # , priority: 5)
         #
         # ctrl.addLauncher(=>
-        #   ctrl.openModal SupportDiehard_FundModal, group: (=> ctrl.group), preventClose: (-> true)
+        #   ctrl.openModal SupportDiehardFundModal, group: (=> ctrl.group), preventClose: (-> true)
         #   true
         # , =>
         #   membership = ctrl.group.membershipFor(Session.user()) or { experiences: {} }

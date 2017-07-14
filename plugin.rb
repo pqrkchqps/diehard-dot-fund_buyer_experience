@@ -1,5 +1,5 @@
 module Plugins
-  module Diehard_FundBuyerExperience
+  module DiehardFundBuyerExperience
     class Plugin < Plugins::Base
 
       setup! 'diehard-dot-fund_buyer_experience' do |plugin|
