@@ -34,7 +34,7 @@ ActiveAdmin.register Subscription do
   form do |f|
     inputs 'Subscription' do
       input :kind, label: "Kind (paid / trial / gift)"
-      input :plan, label: "Plan (loomio-standard-plan / loomio-plus-plan)"
+      input :plan, label: "Plan (diehard_fund-standard-plan / diehard_fund-plus-plan)"
       input :payment_method, label: 'Payment method (chargify / manual / paypal)'
       input :expires_at
       input :activated_at

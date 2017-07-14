@@ -1,4 +1,4 @@
-angular.module('loomioApp').factory 'SubscriptionSuccessModal', ->
+angular.module('diehard_fundApp').factory 'SubscriptionSuccessModal', ->
   templateUrl: 'generated/components/subscription_success_modal/subscription_success_modal.html'
   size: 'subscription-success-modal'
   controller: ($scope, IntercomService, $rootScope) ->
@@ -7,5 +7,5 @@ angular.module('loomioApp').factory 'SubscriptionSuccessModal', ->
       $scope.$close()
 
     $scope.dismiss = ->
-      $rootScope.$broadcast 'launchIntroCarousel' if Loomio.pluginConfig('loomio_onboarding')
+      $rootScope.$broadcast 'launchIntroCarousel' if Diehard_Fund.pluginConfig('diehard_fund_onboarding')
       $scope.$close()

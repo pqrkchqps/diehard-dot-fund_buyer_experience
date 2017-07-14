@@ -1,19 +1,19 @@
 module Plugins
-  module LoomioBuyerExperience
+  module Diehard_FundBuyerExperience
     class Plugin < Plugins::Base
 
-      setup! :loomio_buyer_experience do |plugin|
+      setup! :diehard_fund_buyer_experience do |plugin|
         plugin.enabled = true
 
         plugin.use_asset 'components/services/chargify_service.coffee'
         plugin.use_asset 'components/decorators/group_page_controller_decorator.coffee'
         plugin.use_component :choose_plan_modal
-        plugin.use_component :support_loomio_modal
+        plugin.use_component :support_diehard_fund_modal
         plugin.use_component :subscription_success_modal
         plugin.use_component :upgrade_plan_card, outlet: :before_group_page_column_right
         plugin.use_component :manage_group_subscription_link, outlet: :after_group_actions_manage_memberships
 
-        plugin.use_translations 'config/locales', :loomio_buyer_experience
+        plugin.use_translations 'config/locales', :diehard_fund_buyer_experience
 
         plugin.use_class_directory 'app/models'
         plugin.use_class_directory 'app/admin'

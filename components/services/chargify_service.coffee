@@ -1,4 +1,4 @@
-angular.module('loomioApp').factory 'ChargifyService', (AppConfig, Session) ->
+angular.module('diehard_fundApp').factory 'ChargifyService', (AppConfig, Session) ->
   new class ChargifyService
 
     chargifyUrlFor: (group, kind) ->
@@ -17,4 +17,4 @@ angular.module('loomioApp').factory 'ChargifyService', (AppConfig, Session) ->
       ).join('&')
 
     chargify: ->
-      AppConfig.pluginConfig('loomio_buyer_experience').config.chargify
+      AppConfig.pluginConfig('diehard_fund_buyer_experience').config.chargify

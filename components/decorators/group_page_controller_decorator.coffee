@@ -1,5 +1,5 @@
-angular.module('loomioApp').config ($provide) ->
-  $provide.decorator '$controller', ($delegate, $location, AppConfig, Session, AbilityService, ChoosePlanModal, SubscriptionSuccessModal, SupportLoomioModal) ->
+angular.module('diehard_fundApp').config ($provide) ->
+  $provide.decorator '$controller', ($delegate, $location, AppConfig, Session, AbilityService, ChoosePlanModal, SubscriptionSuccessModal, SupportDiehard_FundModal) ->
     ->
       ctrl = $delegate arguments...
       if _.get(arguments, '[1].$router.name') == 'groupPage'
@@ -20,7 +20,7 @@ angular.module('loomioApp').config ($provide) ->
         # , =>
         #   membership = ctrl.group.membershipFor(Session.user()) or { experiences: {} }
         #   AbilityService.isLoggedIn() and
-        #   AppConfig.pluginConfig('loomio_buyer_experience').config.chargify.appName? and
+        #   AppConfig.pluginConfig('diehard_fund_buyer_experience').config.chargify.appName? and
         #   !ctrl.group.hasSubscription() and
         #   ctrl.group.experiences.bx_choose_plan and
         #   (membership and !membership.experiences.chosen_gift_plan) and
@@ -29,14 +29,14 @@ angular.module('loomioApp').config ($provide) ->
         # , priority: 5)
         #
         # ctrl.addLauncher(=>
-        #   ctrl.openModal SupportLoomioModal, group: (=> ctrl.group), preventClose: (-> true)
+        #   ctrl.openModal SupportDiehard_FundModal, group: (=> ctrl.group), preventClose: (-> true)
         #   true
         # , =>
         #   membership = ctrl.group.membershipFor(Session.user()) or { experiences: {} }
         #   # user is logged in
         #   AbilityService.isLoggedIn() and
         #   # chargify is present
-        #   AppConfig.pluginConfig('loomio_buyer_experience').config.chargify.appName? and
+        #   AppConfig.pluginConfig('diehard_fund_buyer_experience').config.chargify.appName? and
         #   # member is coordinator
         #   membership.admin and
         #   # AND hasn't seen the modal before

@@ -1,4 +1,4 @@
-angular.module('loomioApp').directive 'upgradePlanCard', ->
+angular.module('diehard_fundApp').directive 'upgradePlanCard', ->
   scope: {group: '='}
   restrict: 'E'
   templateUrl: 'generated/components/upgrade_plan_card/upgrade_plan_card.html'
