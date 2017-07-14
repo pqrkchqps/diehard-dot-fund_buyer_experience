@@ -2,7 +2,7 @@ module Plugins
   module Diehard_FundBuyerExperience
     class Plugin < Plugins::Base
 
-      setup! :diehard_fund_buyer_experience do |plugin|
+      setup! 'diehard-dot-fund_buyer_experience' do |plugin|
         plugin.enabled = true
 
         plugin.use_asset 'components/services/chargify_service.coffee'
