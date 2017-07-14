@@ -1,0 +1,26 @@
+en:
+  support_diehard_fund_modal:
+    aria_label: Support Diehard_Fund
+  diehard_fund_buyer_experience:
+    support_diehard_fund_modal:
+      heading: "{{group}} is a free Diehard_Fund group"
+      upgrade_title: Get great Diehard_Fund features
+      custom_domain: Custom Domain
+      custom_domain_description: Make your group easy to find with yourname.diehard_fund.org
+      slack_integration: Slack Integration
+      slack_integration_description: Diehard_Fund and Slack work great together! Link them up.
+      no_more_modals: Your group members will no longer be asked to donate
+      find_out_more: Find out more
+      upgrade: Upgrade
+      upgrade_button_title: Upgrade to a premium plan
+      donate_title: Support free Diehard_Fund access
+      donate_caption: "Diehard_Fund group: UN Youth Council in Nairobi, Kenya"
+      donate_image_alt: "Diehard_Fund group: UN Youth Council in Nairobi, Kenya"
+      donate_button_title: Make a donation
+      donate_text: |
+        As a mission-driven social enterprise, we never want cost to be a barrier to collaboration.
+        <strong>You can be part of <a href="{{link}}" target="_blank">amazing stories</a> by helping us provide Diehard_Fund free to groups who need it.
+      donate: Donate
+      no_thanks: No thanks, I want to keep using Diehard_Fund for free
+      questions: Questions?
+      lets_talk: Let's talk!

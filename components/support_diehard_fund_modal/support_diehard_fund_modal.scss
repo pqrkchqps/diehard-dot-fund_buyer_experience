@@ -1,0 +1,112 @@
+.support-diehard_fund-modal {
+  max-width: 700px;
+}
+
+.support-diehard_fund-modal__body {
+  @include displayFlex;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  flex-direction: row;
+  max-height: inherit;
+}
+
+.support-diehard_fund-modal--container {
+  @include displayFlex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  padding: 5px 15px 15px;
+  margin: 10px;
+  flex-basis: 50%;
+  background-color: #dfdfdf;
+}
+
+.support-diehard_fund-modal__upgrade-button {
+  margin: auto;
+  @include lmoBtnOffer;
+  font-weight: bold;
+}
+
+.support-diehard_fund-modal__upgrade-items {
+  list-style-type: none;
+  margin: 15px 0 0 0;
+  padding: 0;
+  color: $grey-on-grey;
+  i {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #bbb;
+  }
+  h3 {
+    font-weight: bold;
+    color: $grey-on-grey;
+  }
+  li { @include displayFlex; }
+}
+
+.support-diehard_fund-model__find-out-more {
+  display: block;
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+.support-diehard_fund-modal__donate-image {
+  width: 100%;
+}
+
+.support-diehard_fund-modal__donate-caption {
+  font-weight: normal;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.support-diehard_fund-modal__donate-button {
+  margin: auto;
+  @include lmoBtnFeatured;
+  font-weight: bold;
+}
+
+.support-diehard_fund-modal__footer {
+  @include displayFlex;
+  padding: 15px 25px;
+  justify-content: space-around;
+  -webkit-justify-content: space-around;
+}
+
+.support-diehard_fund-modal__lets-talk {
+  margin-right: auto;
+  cursor: pointer;
+}
+
+.support-diehard_fund-modal__no-thanks {
+  cursor: pointer;
+  text-decoration: none;
+  color: $grey-on-white;
+  margin-left: auto;
+  line-height: 48px;
+  font-size: 12px;
+  font-style: italic;
+}
+
+@media (max-width: $small-max-px) {
+  .support-diehard_fund-modal__body {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+  }
+
+  .support-diehard_fund-modal__footer {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+  }
+
+  .support-diehard_fund-modal__lets-talk {
+    margin: auto;
+  }
+
+  .support-diehard_fund-modal__no-thanks {
+    line-height: auto;
+    margin: 10px auto 0;
+  }
+
+}
