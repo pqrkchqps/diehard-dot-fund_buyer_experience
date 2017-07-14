@@ -15,11 +15,11 @@ module Plugins
 
         plugin.use_translations 'config/locales', :diehard_fund_buyer_experience
 
-        plugin.use_class_directory 'models'
-        plugin.use_class_directory 'admin'
-        plugin.use_class_directory 'controllers'
-        plugin.use_class_directory 'helpers'
-        plugin.use_class_directory 'services'
+        plugin.use_class_directory 'app/models'
+        plugin.use_class_directory 'app/admin'
+        plugin.use_class_directory 'app/controllers'
+        plugin.use_class_directory 'app/helpers'
+        plugin.use_class_directory 'app/services'
 
         plugin.use_route :post, 'groups/:id/use_gift_subscription', 'groups#use_gift_subscription'
         plugin.extend_class API::GroupsController do
