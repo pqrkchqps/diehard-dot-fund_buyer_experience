@@ -6,7 +6,7 @@ en:
       heading: "{{group}} is a free Diehard_Fund group"
       upgrade_title: Get great Diehard_Fund features
       custom_domain: Custom Domain
-      custom_domain_description: Make your group easy to find with yourname.diehard_fund.org
+      custom_domain_description: Make your group easy to find with yourname.diehard.fund
       slack_integration: Slack Integration
       slack_integration_description: Diehard_Fund and Slack work great together! Link them up.
       no_more_modals: Your group members will no longer be asked to donate
