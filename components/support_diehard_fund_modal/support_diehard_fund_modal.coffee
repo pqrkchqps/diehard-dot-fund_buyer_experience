@@ -1,4 +1,4 @@
-angular.module('diehard_fundApp').factory 'SupportDiehardFundModal', ->
+angular.module('diehardFundApp').factory 'SupportDiehardFundModal', ->
   templateUrl: 'generated/components/support_diehard_fund_modal/support_diehard_fund_modal.html'
   controller: ($scope, $window, $rootScope, group, Session, Records, ModalService, IntercomService, ChoosePlanModal) ->
     $scope.group = group

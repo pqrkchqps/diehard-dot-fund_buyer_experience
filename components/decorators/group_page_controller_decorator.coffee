@@ -1,4 +1,4 @@
-angular.module('diehard_fundApp').config ($provide) ->
+angular.module('diehardFundApp').config ($provide) ->
   $provide.decorator '$controller', ($delegate, $location, AppConfig, Session, AbilityService, ChoosePlanModal, SubscriptionSuccessModal, SupportDiehardFundModal) ->
     ->
       ctrl = $delegate arguments...

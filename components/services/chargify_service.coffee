@@ -1,4 +1,4 @@
-angular.module('diehard_fundApp').factory 'ChargifyService', (AppConfig, Session) ->
+angular.module('diehardFundApp').factory 'ChargifyService', (AppConfig, Session) ->
   new class ChargifyService
 
     chargifyUrlFor: (group, kind) ->

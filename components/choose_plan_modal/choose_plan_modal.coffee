@@ -1,4 +1,4 @@
-angular.module('diehard_fundApp').factory 'ChoosePlanModal', ->
+angular.module('diehardFundApp').factory 'ChoosePlanModal', ->
   templateUrl: 'generated/components/choose_plan_modal/choose_plan_modal.html'
   size: 'choose-plan-modal'
   controller: ($scope, $window, group, Records, Session, ModalService, SupportDiehardFundModal, ChargifyService, IntercomService) ->

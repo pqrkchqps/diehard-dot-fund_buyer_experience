@@ -1,4 +1,4 @@
-angular.module('diehard_fundApp').directive 'manageGroupSubscriptionLink', ->
+angular.module('diehardFundApp').directive 'manageGroupSubscriptionLink', ->
   scope: {group: '='}
   templateUrl: 'generated/components/manage_group_subscription_link/manage_group_subscription_link.html'
   controller: ($scope, $window, AbilityService, ModalService, ChoosePlanModal, ChargifyService) ->
